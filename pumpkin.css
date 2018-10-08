@@ -1,0 +1,146 @@
+/* Inspired by and used as a reference https://codepen.io/rachel_web/pen/yYEogw */
+
+body{ 
+    background-color: black;
+    text-align: center;
+    background-image: url(http://pngimg.com/uploads/blood/blood_PNG6089.png);
+}
+
+p{
+    color:#ff3300;
+    font-size: 4em;
+    font-family: 'Bigelow Rules', cursive;
+}
+
+.pumpkin {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px; 
+    width: 250px;
+    height: 150px;
+    background-color: #ff6600;
+    border-radius: 100px;
+    box-shadow: inset 5px 5px 50px 10px #1a0a00;
+}
+
+.top-dent-back,
+.top-dent-front {
+    height: 30px;
+    width: 20px;
+    border-radius: 50%;
+}
+
+.top-dent-back-left {
+    position: absolute;
+    left: 35%;
+    top: 0%;
+    transform: translate(-50%, -50%);
+    transform: rotate(110deg);
+    box-shadow: -7px 0 5px -5px #1a0a00;
+}
+
+.top-dent-back-right {
+    position: absolute;
+    right: 35%;
+    top: 0%;
+    transform: translate(-50%, -50%);
+    transform: rotate(240deg);
+    box-shadow: 7px 0 5px -5px #1a0a00;
+}
+
+.top-dent-front-left {
+    position: absolute;
+    left: 40%;
+    top: 50%;
+    height: 90%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: -7px 0 5px -5px #1a0a00;
+}
+
+.top-dent-front-right {
+    position: absolute;
+    left: 60%;
+    top: 50%;
+    height: 90%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 7px 0 5px -5px #1a0a00;
+}
+
+.stalk {
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 50px;
+    z-index: 1;
+    border-radius: 10% 10% 50% 50% / 90% 90% 20% 20%;
+    background-image: linear-gradient(#4d2800, #1a0d00);
+}
+
+.stalk-shadow { 
+    position: absolute;
+    left: 30%;
+    top: -3%;
+    height: 50px;
+    width: 120px;
+    transform: translate(-50%, -50%);
+	background-image: radial-gradient( rgba(0,0,0,1) 0%,rgba(0,0,0,0) 50%);
+    transform: scaleY(0.5);
+	opacity: 0.7;
+}
+
+.eye {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid #4d2800;
+    animation: eye-candle 1.5s infinite;
+    animation-direction: alternate;
+    
+}
+
+@keyframes eye-candle {
+    from {border-bottom: 50px solid #4d2800}
+    to {border-bottom: 50px solid #e6b800}
+}
+
+.eye-left{
+    position: absolute;
+    left: 32%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+}
+
+.eye-right{
+    position: absolute;
+    left: 68%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+}
+
+.mouth {
+    position: absolute;
+    left: 21%;
+    top: 25%;
+    height: 110px;
+    width: 170px;
+    z-index: 3;
+    background-color: #4d2800;
+    clip-path: polygon(
+        0% 58%, 7% 65%, 19% 70%, 22% 71%, /**/28% 82%/**/, 33% 74%, 38% 74%, 50% 75%, 62% 74%, 67% 74%, /**/72% 82%/**/, 78% 71%, 81% 70%, 93% 65%,
+        100% 58%, 94% 75%, 86% 89%, 79% 94%, 70% 98%, 60% 100%, 56% 100%, /**/50% 88%/**/, 44% 100%, 40% 100%, 30% 98%, 21% 95%, 14% 89%, 6% 75%);
+    overflow: hidden;
+    animation: mouth-candle 1.5s infinite;
+    animation-direction: alternate;
+}
+
+@keyframes mouth-candle {
+    from {background-color: #4d2800}
+    to {background-color: #e6b800}
+}
